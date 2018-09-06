@@ -27,6 +27,7 @@ export class Home extends React.Component<IProps, IState> {
 		todoList: [],
 	};
 
+	// FUNÇÃO PARA CRIAR OS ELEMENTOS DA TODOLIST
 	public createTodo = (todoName:string) => {
 		let newTodoList = this.state.todoList;
 		newTodoList.push({title: todoName, isFinished: false});
@@ -34,6 +35,8 @@ export class Home extends React.Component<IProps, IState> {
 		this.setState({todoList: newTodoList});
 		
 	}
+
+	// FUNÇÃO QUE FAZ O CHECK NOS ITENS SELECIONADOS
 	public toggleTodo = (idTodo:number) => {
 		let newTodoList = this.state.todoList;
 		newTodoList[idTodo] = {
@@ -43,13 +46,16 @@ export class Home extends React.Component<IProps, IState> {
 
 		this.setState({todoList: newTodoList})
 	}
+
+	//FUNÇÃO PARA REMOVER O ELEMENTO DO TODO
 	public removeTodo = (idTodo:number) => {
 		let newTodoList = this.state.todoList;
-		newTodoList[idTodo] = {
-			remove: !newTodoList[idTodo].remove
-			isFinished: !newTodoList[idTodo].isFinished
-		};
-
+		
+		// USE _ QUANDO NÃO FOR USAR UMA O NOME DA PROPRIEDADE
+		// FILTRO PARA REMOVER OS ITENS QUE FORAM APAGADOS
+		newTodoList = newTodoList.filter((_value,index) => index != idTodo);
+		
+		// SETAR O VALOR DO NOVO TODO LIST NA LISTA QUE ESTA SENDO EXIBIDA
 		this.setState({todoList: newTodoList})
 	}
  

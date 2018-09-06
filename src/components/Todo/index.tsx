@@ -4,7 +4,7 @@ interface Iprops {
   title: string;
   id: number;  
   isFinished: boolean;
-  removed: number;
+  // removed: number;
   onToggle: (idTodo: number) => void;
   removeTodo: (idTodo: number) => void;
 }
