@@ -67,7 +67,7 @@ export class Home extends React.Component<IProps, IState> {
 		return (
 			<div className={s.container}>
 				<div className={s.home}>
-					<h1>TO DO </h1>
+					<h1>Lista de Desejos / Metas 2018 </h1>
 					<Search onCreateTodo={this.createTodo}/>
 					{toDoListElements}
 				</div>

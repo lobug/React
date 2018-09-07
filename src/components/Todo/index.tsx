@@ -33,8 +33,8 @@ export class Todo extends React.Component<Iprops, {}> {
           onClick={() => {
             this.props.removeTodo(this.props.id);
           }}
-        >
-          Apagar
+          style={{ width: "10%", height: "30px", marginTop: "15px", marginLeft: "10px"}}
+        ><p  style={{ marginLeft:" -6px", marginTop:"3px"}}>Apagar</p>
         </button>
       </div>
     );
